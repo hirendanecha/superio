@@ -19,7 +19,7 @@ const theme = extendTheme({
       primaryColorRGBA: 'rgba(25, 103, 210, 0.07)',
       secondaryColor: '#34A853',
       secondaryColorlinearGradient:
-        'linear-gradient(90deg, rgba(255,255,255,1) 50%, rgba(230,247,235,1) 100%)',
+        'linear-gradient(90deg, rgba(255,255,255,1) 50%, rgba(255, 0, 0, 0.1) 100%)',
     },
   },
 });

@@ -94,7 +94,7 @@ const JobInfoBanner = () => {
 
             <Flex justify="center">
               <Button
-                background="brand.secondaryColor"
+                background="brand.primaryColor"
                 minWidth="220px"
                 borderRadius="8px"
                 fontSize="15px"
@@ -103,7 +103,7 @@ const JobInfoBanner = () => {
                 height="50px"
                 flexWrap="wrap"
                 _hover={{
-                  background: 'brand.secondaryColor',
+                  background: 'brand.primaryColor',
                 }}
                 onClick={onOpen}
               >
