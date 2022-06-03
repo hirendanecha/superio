@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Heading,
   Box,
@@ -8,12 +8,13 @@ import {
   Button,
   Image,
   useTheme,
-} from '@chakra-ui/react';
-import SearchBar from '../SearchBar/SearchBar';
-import styled from 'styled-components';
-import { JobOpeningsData } from './JobOpeningsData';
-import Card from '../Card/Card';
-import emptyData from '../../assets/pngs/emptyData.png';
+} from "@chakra-ui/react";
+import SearchBar from "../SearchBar/SearchBar";
+import styled from "styled-components";
+import { JobOpeningsData } from "./JobOpeningsData";
+import Card from "../Card/Card";
+import emptyData from "../../assets/pngs/emptyData.png";
+import { hexToRGB } from "../../utils";
 
 const ShowingInfoText = styled(Text)`
   span {
@@ -23,7 +24,7 @@ const ShowingInfoText = styled(Text)`
 
 const ProgressStyled = styled(Progress)`
   background: ${({ theme }) =>
-    `${theme.colors.brand.primaryColorRGBA} !important`};
+    `${hexToRGB(theme.colors.brand.primaryColor, 0.07)} !important`};
 
   .css-i1aryf {
     background-color: ${({ theme }) => theme.colors.brand.primaryColor};
@@ -39,11 +40,11 @@ const JobOpenings = () => {
         <>
           <Heading
             as="h4"
-            fontSize={{ base: '26px', md: '30px' }}
+            fontSize={{ base: "26px", md: "30px" }}
             fontWeight={500}
             color="#202124"
             marginBottom="50px"
-            textAlign={{ base: 'center', md: 'left' }}
+            textAlign={{ base: "center", md: "left" }}
           >
             Job Openings
           </Heading>
@@ -52,7 +53,7 @@ const JobOpenings = () => {
 
           <Box display="inline-block" width="full" marginBottom="60px">
             <ShowingInfoText
-              fontSize={{ base: '14px', md: '15px' }}
+              fontSize={{ base: "14px", md: "15px" }}
               fontWeight="400"
               color="#696969"
               marginBottom="26px"
@@ -63,7 +64,7 @@ const JobOpenings = () => {
               Showing <span>41-60 </span>of <span>944</span> jobs
             </ShowingInfoText>
 
-            {JobOpeningsData?.map(card => (
+            {JobOpeningsData?.map((card) => (
               <Card key={card?.id} card={card} />
             ))}
 
@@ -87,22 +88,22 @@ const JobOpenings = () => {
               <Button
                 colorScheme="teal"
                 variant="link"
-                fontSize={{ base: '15px', md: '16px' }}
+                fontSize={{ base: "15px", md: "16px" }}
                 fontWeight="500"
                 color="brand.primaryColor"
                 paddingBottom="8px"
                 position="relative"
                 _after={{
-                  position: 'absolute',
+                  position: "absolute",
                   content: "''",
-                  width: '70%',
-                  height: '2px',
-                  background: 'brand.primaryColor',
-                  bottom: '0px',
+                  width: "70%",
+                  height: "2px",
+                  background: "brand.primaryColor",
+                  bottom: "0px",
                   left: 0,
                 }}
                 _hover={{
-                  textDecoration: 'none',
+                  textDecoration: "none",
                 }}
               >
                 Show More
@@ -118,12 +119,12 @@ const JobOpenings = () => {
           flexFlow="column"
           width="100%"
           alignItems="center"
-          marginBottom={{ base: '80px', md: '136px' }}
+          marginBottom={{ base: "80px", md: "136px" }}
           textAlign="center"
         >
           <Image src={emptyData} alt="Empty Data" marginBottom="53px" />
           <Text
-            fontSize={{ base: '18px', sm: '20px', md: '32' }}
+            fontSize={{ base: "18px", sm: "20px", md: "32" }}
             fontWeight="400"
             color="#000000"
             marginBottom="16px"
@@ -131,7 +132,7 @@ const JobOpenings = () => {
             Sorry, no jobs found matching this criteria.
           </Text>
           <Text
-            fontSize={{ base: '16px', sm: '18px', md: '24' }}
+            fontSize={{ base: "16px", sm: "18px", md: "24" }}
             fontWeight="400"
             color="#000000"
             marginBottom=""

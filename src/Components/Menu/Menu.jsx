@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Menu,
   MenuButton,
@@ -6,10 +6,11 @@ import {
   MenuItem,
   Button,
   Box,
-} from '@chakra-ui/react';
-import { FaChevronDown, FaCaretUp } from 'react-icons/fa';
+  useTheme,
+} from "@chakra-ui/react";
+import { FaChevronDown, FaCaretUp } from "react-icons/fa";
 
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const ButtonWrapper = styled(Box)`
   .location_icon {
@@ -22,6 +23,8 @@ const ButtonWrapper = styled(Box)`
 `;
 
 const MenuComponent = ({ menuName, leftIcon, MenuItems, onClick }) => {
+  const theme = useTheme();
+
   return (
     <ButtonWrapper display="flex" justifyContent="center">
       <Menu>
@@ -36,40 +39,40 @@ const MenuComponent = ({ menuName, leftIcon, MenuItems, onClick }) => {
           color="#696969"
           minHeight="60px"
           _hover={{
-            background: 'transparent',
+            background: "transparent",
           }}
           _active={{
-            background: 'transparent',
+            background: "transparent",
           }}
           _focus={{
-            boxShadow: 'none',
+            boxShadow: "none",
           }}
         >
           {menuName}
         </MenuButton>
         <MenuList
-          onClick={e => onClick(e.target.value)}
+          onClick={(e) => onClick(e.target.value)}
           borderRadius="0px 0px 8px 8px"
           boxShadow="0px 6px 15px rgba(64, 79, 104, 0.05)"
-          borderTop="2px solid #1967D2"
+          borderTop={`2px solid ${theme.colors.brand.primaryColor}`}
           position="relative"
         >
           <Box position="absolute" top="-12px" left="15px">
-            <FaCaretUp color="#1967D2" />
+            <FaCaretUp color={theme.colors.brand.primaryColor} />
           </Box>
 
           {MenuItems?.map((item, index) => (
             <MenuItem
               key={index}
               value={item?.name}
-              transition={'all 0.3s ease-in-out'}
+              transition={"all 0.3s ease-in-out"}
               color="#696969"
               _hover={{
-                color: '#1967D2',
-                background: 'white',
+                color: "brand.primaryColor",
+                background: "white",
               }}
               _focus={{
-                background: 'white',
+                background: "white",
               }}
             >
               {item?.name}

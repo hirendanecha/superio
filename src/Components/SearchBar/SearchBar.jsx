@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Box,
   InputGroup,
@@ -11,13 +11,14 @@ import {
   Tag,
   TagLabel,
   useTheme,
-} from '@chakra-ui/react';
-import { FiSearch } from 'react-icons/fi';
-import { GrLocation, GrFormClose } from 'react-icons/gr';
-import { Bagsvg, Clocksvg } from '../../assets/svgs';
-import MenuComponent from '../Menu/Menu';
-import CommonButton from '../CommonButton/CommonButton';
-import styled from 'styled-components';
+} from "@chakra-ui/react";
+import { FiSearch } from "react-icons/fi";
+import { GrLocation, GrFormClose } from "react-icons/gr";
+import { Bagsvg, Clocksvg } from "../../assets/svgs";
+import MenuComponent from "../Menu/Menu";
+import CommonButton from "../CommonButton/CommonButton";
+import styled from "styled-components";
+import { hexToRGB } from "../../utils";
 
 const TagStyled = styled(Tag)`
   path {
@@ -27,34 +28,34 @@ const TagStyled = styled(Tag)`
 
 const DepartmentMenuItems = [
   {
-    name: 'Recruiting Coordinator',
-    value: 'Recruiting Coordinator',
+    name: "Recruiting Coordinator",
+    value: "Recruiting Coordinator",
   },
   {
-    name: 'Senior Product Designer',
-    value: 'Senior Product Designer',
+    name: "Senior Product Designer",
+    value: "Senior Product Designer",
   },
 ];
 
 const LocationMenuItem = [
   {
-    name: 'London, UK',
-    value: 'London, UK',
+    name: "London, UK",
+    value: "London, UK",
   },
 ];
 
 const JobTypeMenuItem = [
   {
-    name: 'Full time',
-    value: 'Full time',
+    name: "Full time",
+    value: "Full time",
   },
   {
-    name: 'Part Time',
-    value: 'Part Time',
+    name: "Part Time",
+    value: "Part Time",
   },
   {
-    name: 'Intern',
-    value: 'Intern',
+    name: "Intern",
+    value: "Intern",
   },
 ];
 
@@ -62,10 +63,10 @@ const SearchBar = () => {
   const theme = useTheme();
 
   const [filterValues, setFilterValues] = useState({
-    search: '',
-    departmentValue: '',
-    locationValue: '',
-    jobTypeValue: '',
+    search: "",
+    departmentValue: "",
+    locationValue: "",
+    jobTypeValue: "",
   });
 
   const [isShow, setIsShow] = useState(false);
@@ -77,7 +78,7 @@ const SearchBar = () => {
     });
   };
 
-  const submitHandler = value => {
+  const submitHandler = (value) => {
     setIsShow(true);
     console.log(value);
   };
@@ -87,22 +88,22 @@ const SearchBar = () => {
       <Box
         display="inline-block"
         width="full"
-        height={{ base: 'auto', lg: '100px' }}
+        height={{ base: "auto", lg: "100px" }}
         border="1px solid #ECEDF2"
         borderRadius="8px"
         boxShadow="0px 6px 15px 0px #404F680D"
         marginBottom="30px"
-        padding={{ base: '20px', lg: '0px 20px' }}
+        padding={{ base: "20px", lg: "0px 20px" }}
       >
         <Box display="flex" alignItems="center" width="full" height="full">
           <Grid
             templateColumns={{
-              base: 'repeat(12, 1fr)',
+              base: "repeat(12, 1fr)",
             }}
             templateRows={{
-              base: 'repeat(5, 1fr)',
-              md: 'repeat(3, 1fr)',
-              lg: 'repeat(1, 1fr)',
+              base: "repeat(5, 1fr)",
+              md: "repeat(3, 1fr)",
+              lg: "repeat(1, 1fr)",
             }}
             width="full"
           >
@@ -120,12 +121,12 @@ const SearchBar = () => {
                   <Input
                     type="text"
                     placeholder="Job title, keywords"
-                    borderColor={{ base: '#e2e8f0', lg: 'transparent' }}
+                    borderColor={{ base: "#e2e8f0", lg: "transparent" }}
                     fontSize="15px"
                     fontWeight="400px"
                     color="#696969"
                     height="60px"
-                    onChange={e => changeHandler('search', e.target.value)}
+                    onChange={(e) => changeHandler("search", e.target.value)}
                   />
                 </InputGroup>
               </FormControl>
@@ -134,27 +135,27 @@ const SearchBar = () => {
             <GridItem
               colStart={{ base: 1, md: 1, lg: 6 }}
               colEnd={{ base: 13, md: 5, lg: 8 }}
-              borderRight={{ base: 'none', lg: '1px solid #ECEDF2' }}
-              borderLeft={{ base: 'none', lg: '1px solid #ECEDF2' }}
+              borderRight={{ base: "none", lg: "1px solid #ECEDF2" }}
+              borderLeft={{ base: "none", lg: "1px solid #ECEDF2" }}
             >
               <MenuComponent
                 menuName="Department"
                 leftIcon={<Bagsvg />}
                 MenuItems={DepartmentMenuItems}
-                onClick={value => changeHandler('departmentValue', value)}
+                onClick={(value) => changeHandler("departmentValue", value)}
               />
             </GridItem>
 
             <GridItem
               colStart={{ base: 1, md: 5, lg: 8 }}
               colEnd={{ base: 13, md: 9, lg: 10 }}
-              borderRight={{ base: 'none', lg: '1px solid #ECEDF2' }}
+              borderRight={{ base: "none", lg: "1px solid #ECEDF2" }}
             >
               <MenuComponent
                 menuName="Location"
                 leftIcon={<GrLocation className="location_icon" />}
                 MenuItems={LocationMenuItem}
-                onClick={value => changeHandler('locationValue', value)}
+                onClick={(value) => changeHandler("locationValue", value)}
               />
             </GridItem>
 
@@ -166,7 +167,7 @@ const SearchBar = () => {
                 menuName="Job Type"
                 leftIcon={<Clocksvg />}
                 MenuItems={JobTypeMenuItem}
-                onClick={value => changeHandler('jobTypeValue', value)}
+                onClick={(value) => changeHandler("jobTypeValue", value)}
               />
             </GridItem>
 
@@ -193,7 +194,7 @@ const SearchBar = () => {
               size="lg"
               borderRadius="full"
               variant="solid"
-              background="brand.primaryColorRGBA"
+              background={hexToRGB(theme.colors.brand.primaryColor, 0.07)}
               height="45px"
               theme={theme}
             >
@@ -213,7 +214,7 @@ const SearchBar = () => {
               size="lg"
               borderRadius="full"
               variant="solid"
-              background="brand.primaryColorRGBA"
+              background={hexToRGB(theme.colors.brand.primaryColor, 0.07)}
               height="45px"
               theme={theme}
             >
@@ -233,7 +234,7 @@ const SearchBar = () => {
               size="lg"
               borderRadius="full"
               variant="solid"
-              background="brand.primaryColorRGBA"
+              background={hexToRGB(theme.colors.brand.primaryColor, 0.07)}
               height="45px"
               theme={theme}
             >

@@ -1,25 +1,26 @@
-import { ColorModeScript } from '@chakra-ui/react';
-import React, { StrictMode } from 'react';
-import * as ReactDOM from 'react-dom/client';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import * as serviceWorker from './serviceWorker';
-import { BrowserRouter } from 'react-router-dom';
-import { ChakraProvider, extendTheme } from '@chakra-ui/react';
-import './index.css';
+import { ColorModeScript } from "@chakra-ui/react";
+import React, { StrictMode } from "react";
+import * as ReactDOM from "react-dom/client";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import * as serviceWorker from "./serviceWorker";
+import { BrowserRouter } from "react-router-dom";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import "./index.css";
 
-const container = document.getElementById('root');
+const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
 
 const theme = extendTheme({
   colors: {
     brand: {
-      primaryColor: 'red',
+      primaryColor: "#FF0000",
+      secondaryColor: "#34A853",
       // primaryColor: '#1967D2',
-      primaryColorRGBA: 'rgba(25, 103, 210, 0.07)',
-      secondaryColor: '#34A853',
-      secondaryColorlinearGradient:
-        'linear-gradient(90deg, rgba(255,255,255,1) 50%, rgba(255, 0, 0, 0.1) 100%)',
+      // primaryColorRGBA: "rgba(255, 0, 0, 0.07)",
+      // primaryColorRGBA: 'rgba(25, 103, 210, 0.07)',
+      // secondaryColorlinearGradient:
+      //   "linear-gradient(90deg, rgba(255,255,255,1) 50%, rgba(255, 0, 0, 0.1) 100%)",
     },
   },
 });

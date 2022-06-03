@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Container,
   Box,
@@ -15,10 +15,12 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
-} from '@chakra-ui/react';
-import { Bagsvg, Clocksvg } from '../../assets/svgs';
-import { GrLocation } from 'react-icons/gr';
-import styled from 'styled-components';
+  useTheme,
+} from "@chakra-ui/react";
+import { Bagsvg, Clocksvg } from "../../assets/svgs";
+import { GrLocation } from "react-icons/gr";
+import styled from "styled-components";
+import { changeGradient } from "../../utils";
 
 const LocationFlex = styled(Flex)`
   .location_icon {
@@ -31,6 +33,8 @@ const LocationFlex = styled(Flex)`
 `;
 
 const JobInfoBanner = () => {
+  const theme = useTheme();
+
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -40,15 +44,15 @@ const JobInfoBanner = () => {
         alignItems="center"
         width="full"
         minHeight="250px"
-        background="brand.secondaryColorlinearGradient"
+        background={changeGradient(theme.colors.brand.primaryColor)}
         marginBottom="50px"
       >
         <Container
           maxW={[
-            'container.sm',
-            'container.md',
-            'container.lg',
-            'container.xl',
+            "container.sm",
+            "container.md",
+            "container.lg",
+            "container.xl",
           ]}
         >
           <SimpleGrid
@@ -58,11 +62,11 @@ const JobInfoBanner = () => {
           >
             <Flex
               flexFlow="column"
-              alignItems={{ base: 'center', md: 'flex-start' }}
+              alignItems={{ base: "center", md: "flex-start" }}
             >
               <Heading
                 as="h3"
-                fontSize={{ base: '22px', md: '26px' }}
+                fontSize={{ base: "22px", md: "26px" }}
                 color="#202124"
                 fontWeight="500"
                 marginBottom="18px"
@@ -103,7 +107,7 @@ const JobInfoBanner = () => {
                 height="50px"
                 flexWrap="wrap"
                 _hover={{
-                  background: 'brand.primaryColor',
+                  background: "brand.primaryColor",
                 }}
                 onClick={onOpen}
               >
@@ -119,7 +123,7 @@ const JobInfoBanner = () => {
         <ModalContent>
           <ModalHeader
             textAlign="center"
-            fontSize={{ base: '22px', md: '29px' }}
+            fontSize={{ base: "22px", md: "29px" }}
             color="#202124"
             fontWeight="500"
           >

@@ -1,7 +1,7 @@
-import React from 'react';
-import { Box, Image } from '@chakra-ui/react';
-import Logo from '../../../assets/pngs/logo.png';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { Box } from "@chakra-ui/react";
+import { SuperioSvgLogo } from "../../../assets/svgs";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -10,16 +10,16 @@ const Header = () => {
       display="flex"
       alignItems="center"
       justifyContent="center"
-      cursor={'pointer'}
+      cursor={"pointer"}
       width="full"
       height="110px"
       boxShadow="0px 6px 15px 0px #404F680D"
       zIndex="111"
       position="fixed"
       background="white"
-      onClick={()=>navigate("/")}
+      onClick={() => navigate("/")}
     >
-      <Image src={Logo} alt="logo" />
+      <SuperioSvgLogo />
     </Box>
   );
 };
