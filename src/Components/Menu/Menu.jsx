@@ -30,7 +30,6 @@ const MenuComponent = ({ menuName, leftIcon, MenuItems, onClick }) => {
           rightIcon={<FaChevronDown fontSize="15px" color="#696969" />}
           leftIcon={leftIcon}
           background="transparent"
-          // width="max-content"
           width="auto"
           fontSize="15px"
           fontWeight="400"

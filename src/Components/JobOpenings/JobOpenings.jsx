@@ -7,6 +7,7 @@ import {
   Progress,
   Button,
   Image,
+  useTheme,
 } from '@chakra-ui/react';
 import SearchBar from '../SearchBar/SearchBar';
 import styled from 'styled-components';
@@ -21,14 +22,17 @@ const ShowingInfoText = styled(Text)`
 `;
 
 const ProgressStyled = styled(Progress)`
-  background: #d4e1f6 !important;
+  background: ${({ theme }) =>
+    `${theme.colors.brand.primaryColorRGBA} !important`};
 
   .css-i1aryf {
-    background-color: #1967d2;
+    background-color: ${({ theme }) => theme.colors.brand.primaryColor};
   }
 `;
 
 const JobOpenings = () => {
+  const theme = useTheme();
+
   return (
     <>
       {JobOpeningsData.length > 0 && (
@@ -78,13 +82,14 @@ const JobOpenings = () => {
                 width="100%"
                 maxWidth="300px"
                 borderRadius="10px"
+                theme={theme}
               />
               <Button
                 colorScheme="teal"
                 variant="link"
                 fontSize={{ base: '15px', md: '16px' }}
                 fontWeight="500"
-                color="#1967D2"
+                color="brand.primaryColor"
                 paddingBottom="8px"
                 position="relative"
                 _after={{
@@ -92,7 +97,7 @@ const JobOpenings = () => {
                   content: "''",
                   width: '70%',
                   height: '2px',
-                  background: '#1967D2',
+                  background: 'brand.primaryColor',
                   bottom: '0px',
                   left: 0,
                 }}

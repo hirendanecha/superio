@@ -16,12 +16,11 @@ const CommonButton = ({ text, type, ...props }) => {
         borderRadius="8px"
         fontSize="14px"
         fontWeight="400"
-        bg="#f5f6f7"
         color="white"
-        background="#1967D2"
-        _hover={{ bg: '#1967D2' }}
+        background="brand.primaryColor"
+        _hover={{ bg: 'brand.primaryColor' }}
         _active={{
-          bg: '#1967D2',
+          bg: 'brand.primaryColor',
         }}
         _focus={{
           boxShadow: 'none',

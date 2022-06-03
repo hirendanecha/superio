@@ -10,6 +10,7 @@ import {
   HStack,
   Tag,
   TagLabel,
+  useTheme,
 } from '@chakra-ui/react';
 import { FiSearch } from 'react-icons/fi';
 import { GrLocation, GrFormClose } from 'react-icons/gr';
@@ -20,7 +21,7 @@ import styled from 'styled-components';
 
 const TagStyled = styled(Tag)`
   path {
-    stroke: #1967d2;
+    stroke: ${({ theme }) => theme.colors.brand.primaryColor};
   }
 `;
 
@@ -58,6 +59,8 @@ const JobTypeMenuItem = [
 ];
 
 const SearchBar = () => {
+  const theme = useTheme();
+
   const [filterValues, setFilterValues] = useState({
     search: '',
     departmentValue: '',
@@ -190,10 +193,15 @@ const SearchBar = () => {
               size="lg"
               borderRadius="full"
               variant="solid"
-              background="rgba(25, 103, 210, 0.07)"
+              background="brand.primaryColorRGBA"
               height="45px"
+              theme={theme}
             >
-              <TagLabel fontSize="14px" fontWeight="400" color="#1967D2">
+              <TagLabel
+                fontSize="14px"
+                fontWeight="400"
+                color="brand.primaryColor"
+              >
                 {filterValues?.departmentValue}
               </TagLabel>
               <GrFormClose />
@@ -205,10 +213,15 @@ const SearchBar = () => {
               size="lg"
               borderRadius="full"
               variant="solid"
-              background="rgba(25, 103, 210, 0.07)"
+              background="brand.primaryColorRGBA"
               height="45px"
+              theme={theme}
             >
-              <TagLabel fontSize="14px" fontWeight="400" color="#1967D2">
+              <TagLabel
+                fontSize="14px"
+                fontWeight="400"
+                color="brand.primaryColor"
+              >
                 {filterValues?.locationValue}
               </TagLabel>
               <GrFormClose />
@@ -220,10 +233,15 @@ const SearchBar = () => {
               size="lg"
               borderRadius="full"
               variant="solid"
-              background="rgba(25, 103, 210, 0.07)"
+              background="brand.primaryColorRGBA"
               height="45px"
+              theme={theme}
             >
-              <TagLabel fontSize="14px" fontWeight="400" color="#1967D2">
+              <TagLabel
+                fontSize="14px"
+                fontWeight="400"
+                color="brand.primaryColor"
+              >
                 {filterValues?.jobTypeValue}
               </TagLabel>
               <GrFormClose />

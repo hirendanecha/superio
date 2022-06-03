@@ -10,7 +10,7 @@ const EmailResume = () => {
       width="100%"
       minHeight="150px"
       padding={{ base: '32px', md: '0px 32px' }}
-      background="#EFF4FC"
+      background="brand.primaryColorRGBA"
       borderRadius="8px"
       marginTop="32px"
       marginBottom={{ base: '60px', md: '107px' }}

@@ -48,7 +48,7 @@ const Card = ({ card }) => {
           marginBottom="15px"
           transition={'all 0.3s ease-in-out'}
           _groupHover={{
-            color: '#1967D2',
+            color: 'brand.primaryColor',
           }}
         >
           {card?.jobName}

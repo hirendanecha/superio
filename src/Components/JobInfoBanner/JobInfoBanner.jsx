@@ -40,7 +40,7 @@ const JobInfoBanner = () => {
         alignItems="center"
         width="full"
         minHeight="250px"
-        background="linear-gradient(90deg, rgba(255,255,255,1) 50%, rgba(25, 103, 210,0.2) 100%)"
+        background="brand.secondaryColorlinearGradient"
         marginBottom="50px"
       >
         <Container
@@ -94,7 +94,7 @@ const JobInfoBanner = () => {
 
             <Flex justify="center">
               <Button
-                background="#1967D2"
+                background="brand.secondaryColor"
                 minWidth="220px"
                 borderRadius="8px"
                 fontSize="15px"
@@ -103,7 +103,7 @@ const JobInfoBanner = () => {
                 height="50px"
                 flexWrap="wrap"
                 _hover={{
-                  background: '#1967D2',
+                  background: 'brand.secondaryColor',
                 }}
                 onClick={onOpen}
               >
